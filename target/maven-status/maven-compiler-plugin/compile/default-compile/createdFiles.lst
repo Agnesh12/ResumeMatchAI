@@ -1,0 +1,4 @@
+com\example\Backend\BackendApplication.class
+com\example\Backend\UserRepository.class
+com\example\Backend\User.class
+com\example\Backend\DatabaseTestRunner.class
