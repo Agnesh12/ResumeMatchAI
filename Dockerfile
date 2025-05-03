@@ -1,7 +1,8 @@
 # Stage 1: Build the Spring Boot JAR using Maven
 FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
-COPY Backend /app
+COPY pom.xml /app/
+COPY src /app/src
 RUN mvn clean package -DskipTests
 
 # Stage 2: Create the final image and run the JAR
