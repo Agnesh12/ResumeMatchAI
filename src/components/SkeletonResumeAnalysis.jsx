@@ -31,26 +31,4 @@ const SkeletonResumeAnalysis = () => {
 
 export default SkeletonResumeAnalysis;
 
-/* Add the following to your CSS (e.g., index.css or Tailwind config):
-@keyframes skeleton-shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-.animate-skeleton-shimmer {
-  animation: skeleton-shimmer 1.5s infinite linear;
-  opacity: 0.3;
-}
-@keyframes skeleton-bar {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
-}
-.animate-skeleton-bar {
-  animation: skeleton-bar 1.2s infinite;
-}
-.animate-skeleton-bar.delay-150 {
-  animation-delay: 0.15s;
-}
-.animate-skeleton-bar.delay-300 {
-  animation-delay: 0.3s;
-}
-*/
+

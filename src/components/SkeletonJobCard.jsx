@@ -27,19 +27,3 @@ const SkeletonJobCard = () => {
 
 export default SkeletonJobCard;
 
-/* Add this to your CSS (e.g., index.css or Tailwind config)
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-.animate-shimmer {
-  animation: shimmer 1.5s infinite linear;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(209,213,219,0.2) 50%,
-    transparent 100%
-  );
-  z-index: 1;
-}
-*/

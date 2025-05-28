@@ -1,4 +1,4 @@
-// src/components/Sidebar.jsx
+
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, LayoutDashboard, Briefcase, FileText } from "lucide-react";
 import { useState } from "react";
