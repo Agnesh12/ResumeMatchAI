@@ -10,7 +10,7 @@ public class UserInputDTO {
     private String location;
     private List<String> skillsRequired;
 
-    // Getters and Setters
+
     public String getEmail() {
         return email;
     }

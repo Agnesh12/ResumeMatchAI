@@ -19,28 +19,28 @@ public class JobService {
         this.jobRepository = jobRepository;
     }
 
-    // Fetch all jobs
+
     public List<Job> getAllJobs() {
         return jobRepository.findAll();
     }
 
-    // Fetch paginated jobs
+
     public Page<Job> getPaginatedJobs(int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
         return jobRepository.findAll(pageable);
     }
 
-    // Fetch jobs by job type
+
     public List<Job> getJobsByType(String jobType) {
         return jobRepository.findByJobType(jobType);
     }
 
-    // Fetch jobs with filtering
+
     public List<Job> filterJobs(String jobType, String location, String skills) {
         return jobRepository.findJobs(jobType, location, skills);
     }
 
-    // Define skill weights (higher weight = more relevant)
+
     private static final Map<String, Integer> SKILL_WEIGHTS = Map.of(
             "java", 10,
             "spring boot", 8,
@@ -52,7 +52,7 @@ public class JobService {
             "docker", 5
     );
 
-    // Calculate job match score based on skill similarity
+
     private int calculateMatchScore(Set<String> candidateSkills, Job job) {
         String jobRequirements = job.getRequirements().toLowerCase();
         int score = 0;
@@ -63,18 +63,18 @@ public class JobService {
         for (String skill : candidateSkills) {
             String lowerSkill = skill.toLowerCase();
 
-            // If the skill is exactly present, give full weight
+
             if (jobRequirements.contains(lowerSkill)) {
                 int weight = SKILL_WEIGHTS.getOrDefault(lowerSkill, 3);
                 score += weight;
                 logger.info("Matched Skill: {}, Weight: {}, New Score: {}", skill, weight, score);
             }
-            // Check for partial match (e.g., "Spring Boot" should match "Spring Framework")
+
             else {
                 for (String jobSkill : jobRequirements.split(",")) {
                     jobSkill = jobSkill.trim();
                     if (jobSkill.contains(lowerSkill) || lowerSkill.contains(jobSkill)) {
-                        score += (SKILL_WEIGHTS.getOrDefault(lowerSkill, 3) / 2); // Half score for partial match
+                        score += (SKILL_WEIGHTS.getOrDefault(lowerSkill, 3) / 2);
                     }
                 }
             }
@@ -84,7 +84,7 @@ public class JobService {
         return score;
     }
 
-    // Get job recommendations based on similarity scoring (Paginated)
+
     public List<Job> getRecommendedJobs(Set<String> candidateSkills, int page, int size) {
         List<Job> allJobs = jobRepository.findAll();
 
@@ -95,10 +95,10 @@ public class JobService {
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
 
-        // Paginate results safely
+
         int start = page * size;
         if (start >= recommendedJobs.size()) {
-            return Collections.emptyList(); // Prevent IndexOutOfBoundsException
+            return Collections.emptyList();
         }
         int end = Math.min(start + size, recommendedJobs.size());
 

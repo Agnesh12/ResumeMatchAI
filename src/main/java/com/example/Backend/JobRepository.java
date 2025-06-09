@@ -9,10 +9,10 @@ import java.util.List;
 
 public interface JobRepository extends JpaRepository<Job, Long> {
 
-    // Find jobs by jobType
+
     List<Job> findByJobType(String jobType);
 
-    // Find jobs using filters
+
     @Query("SELECT j FROM Job j WHERE " +
             "(:jobType IS NULL OR j.jobType = :jobType) AND " +
             "(:location IS NULL OR j.location LIKE %:location%) AND " +
@@ -23,9 +23,9 @@ public interface JobRepository extends JpaRepository<Job, Long> {
             @Param("skills") String skills
     );
 
-    // Fetch all jobs
+
     List<Job> findAll();
 
-    // Pagination support
+
     Page<Job> findAll(Pageable pageable);
 }

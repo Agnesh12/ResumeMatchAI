@@ -20,13 +20,13 @@ public class DatabaseTestRunner implements CommandLineRunner {
     public void run(String... args) {
         String email = "test@example.com";
 
-        // Check if user already exists
+
         Optional<User> existingUser = userRepository.findByEmail(email);
         if (existingUser.isEmpty()) {
             User user = new User(email, "John Doe", "Software Engineer",
                     "Looking for a Java developer with 2+ years of experience.", "Remote");
 
-            // Save user first
+
             user = userRepository.save(user);
 
             // Create skills and associate them with the user

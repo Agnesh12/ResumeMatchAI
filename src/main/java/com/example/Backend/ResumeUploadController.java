@@ -21,7 +21,7 @@ public class ResumeUploadController {
         }
 
         try {
-            // Save the uploaded file locally (optional)
+
             String uploadDir = System.getProperty("user.dir") + "/uploads/";
             File directory = new File(uploadDir);
             if (!directory.exists()) {
@@ -29,10 +29,10 @@ public class ResumeUploadController {
             }
             file.transferTo(new File(uploadDir + file.getOriginalFilename()));
 
-            // Dummy analysis data
+
             Map<String, Object> result = new HashMap<>();
             Random random = new Random();
-            int score = 70 + random.nextInt(30); // Random score between 70-99
+            int score = 70 + random.nextInt(30);
 
             List<String> strengths = Arrays.asList(
                     "Strong experience in React & JavaScript",
