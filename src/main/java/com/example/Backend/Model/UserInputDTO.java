@@ -1,4 +1,4 @@
-package com.example.Backend;
+package com.example.Backend.Model;
 
 import java.util.List;
 

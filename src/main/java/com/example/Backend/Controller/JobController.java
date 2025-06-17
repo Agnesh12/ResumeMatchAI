@@ -1,5 +1,7 @@
-package com.example.Backend;
+package com.example.Backend.Controller;
 
+import com.example.Backend.Model.Job;
+import com.example.Backend.Service.JobService;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;

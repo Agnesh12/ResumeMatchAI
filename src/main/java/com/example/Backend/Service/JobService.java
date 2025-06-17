@@ -1,5 +1,7 @@
-package com.example.Backend;
+package com.example.Backend.Service;
 
+import com.example.Backend.Model.Job;
+import com.example.Backend.Repository.JobRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;

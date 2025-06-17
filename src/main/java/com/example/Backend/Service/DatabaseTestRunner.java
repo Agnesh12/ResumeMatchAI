@@ -1,5 +1,9 @@
-package com.example.Backend;
+package com.example.Backend.Service;
 
+import com.example.Backend.Model.User;
+import com.example.Backend.Model.UserSkill;
+import com.example.Backend.Repository.UserRepository;
+import com.example.Backend.Repository.UserSkillRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import java.util.Arrays;
@@ -29,7 +33,7 @@ public class DatabaseTestRunner implements CommandLineRunner {
 
             user = userRepository.save(user);
 
-            // Create skills and associate them with the user
+
             UserSkill skill1 = new UserSkill("Java", user);
             UserSkill skill2 = new UserSkill("Spring Boot", user);
             UserSkill skill3 = new UserSkill("SQL", user);

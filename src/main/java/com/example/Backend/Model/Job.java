@@ -1,4 +1,4 @@
-package com.example.Backend;
+package com.example.Backend.Model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -19,5 +19,5 @@ public class Job {
     private String location;
     private String description;
     private String requirements;
-    private String jobType; // Full-time, Part-time, Remote
+    private String jobType;
 }

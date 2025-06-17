@@ -1,4 +1,4 @@
-package com.example.Backend;
+package com.example.Backend.Model;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,9 +21,9 @@ public class UserDTO {
         this.location = user.getLocation();
         this.skillsRequired = (user.getSkillsRequired() != null)
                 ? user.getSkillsRequired().stream()
-                .map(UserSkill::getSkill) // ✅ Use correct method
+                .map(UserSkill::getSkill)
                 .collect(Collectors.toList())
-                : List.of(); // Return empty list if null
+                : List.of();
     }
 
     public Long getId() { return id; }

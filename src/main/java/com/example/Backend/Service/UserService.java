@@ -1,5 +1,10 @@
-package com.example.Backend;
+package com.example.Backend.Service;
 
+import com.example.Backend.Model.User;
+import com.example.Backend.Model.UserInputDTO;
+import com.example.Backend.Model.UserSkill;
+import com.example.Backend.Repository.UserRepository;
+import com.example.Backend.Repository.UserSkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.example.Backend;
+package com.example.Backend.Controller;
 
 import org.apache.tika.Tika;
 import org.apache.tika.exception.TikaException;
